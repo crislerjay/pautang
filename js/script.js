@@ -85,7 +85,7 @@ function addUtangDOM(utang) {
       <span class="name">${utang.name}</span><br>
       <span class="date">${utang.date}</span>
     </p>
-    <p>&#8369; <span class="amount">${utang.amount}</span></p>
+    <p>&#8369; <span class="amount">${Number(utang.amount).toLocaleString()}</span></p>
     <button class="delete-btn" onclick="removeUtang(${utang.id})">x</button>
   `;
   //add to ul/dom
