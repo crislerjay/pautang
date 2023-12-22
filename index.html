@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAUTANG TRACKER!</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>PAUTANG TRACKER</h1>
+      <div class="totalContainer">
+        <p>TOTAL PAUTANG<span class="total">&#8369; 100,000</span></p>
+      </div>
+    </div>
+
+    <div class="pautangContainer">
+      <div class="pautangContent flex">
+        <h2>PAUTANG LIST</h2>
+        <div class="filterContainer flex">
+          <!-- Display selected option -->
+          <p id="selectedOption">Filter by</p>
+            <select id="selected" onchange="handleSelectChange()">
+              <!-- <option value="all">all</option>
+              <option value="test">papa</option>
+              <option value="test2">uncle andong</option>
+              <option value="test3">uncle tom</option> -->
+            </select>
+        </div>
+      </div>
+      
+      <ul class="pautangList">
+        <!-- 
+        <li>
+          <p>
+            <span class="name">uling</span><br>
+            <span class="date">0ct 13 2023</span>
+          </p>
+          <p>&#8369; <span class="amount">3500</span></p>
+        </li> -->
+      </ul>
+    </div>
+
+    <p class="icon add">+</p>
+
+    <div class="modal">
+      <div class="content">
+        <h2>Add Pautang</h2>
+        <form id="form">
+          <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Enter name..." />
+          </div>
+          <div class="form-control">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" required placeholder="Enter amount..." />
+          </div>
+          <div class="form-control">
+            <label for="date">Date</label>
+            <input type="date" id="date" required placeholder="Enter date..." />
+          </div>
+          <button class="btn">Add</button>
+        </form>
+        <p class="icon close">X</p>
+      </div>
+    </div>
+
+    <div class="alert">Utang added Successfully!</div>
+  </div>
+</body>
+</html>
