@@ -110,16 +110,16 @@ function updateLocalStorage() {
 function updateTotal(option) {
   if (option === 'all') {
     const amounts = utangs.map(utang => utang.amount); // get all amount
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2); // calculate
-    totalElem.innerText = `₱ ${total}`; // changed total text
+    const total = amounts.reduce((acc, item) => (acc += item), 0) // calculate
+    totalElem.innerText = `₱ ${Number(total).toLocaleString()}`; // changed total text
     pautangListElem.innerHTML = ''; // remove all item
     utangs.forEach(addUtangDOM); // display to dom
   } else {
     const copy = utangs.map(utang => utang) // create copy of array
     const filtered = copy.filter(item => item.name === option) /// filter array based on option
     const amounts = filtered.map(utang => utang.amount); // get all amount
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2); // calculate
-    totalElem.innerText = `₱ ${total}`; // changed total text
+    const total = amounts.reduce((acc, item) => (acc += item), 0) // calculate
+    totalElem.innerText = `₱ ${Number(total).toLocaleString()}`; // changed total text
     pautangListElem.innerHTML = ''; // remove all item
     filtered.forEach(addUtangDOM); // display to dom
   }
